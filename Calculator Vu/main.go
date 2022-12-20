@@ -63,8 +63,8 @@ func main() {
 		case "-":
 			var sub int
 			sub = a - b
-			if sub < 0 {
-				fmt.Println("Отрицательное значение")
+			if sub <= 0 {
+				fmt.Println("Отрицательное или нулевое значение")
 				return
 			}
 			integerToRoman(sub)
