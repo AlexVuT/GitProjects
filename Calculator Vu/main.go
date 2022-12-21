@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -20,7 +22,8 @@ func main() {
 
 	if z != "" {
 		fmt.Println("Неверная операция")
-		return
+		time.Sleep(3 * time.Second)
+		os.Exit(0)
 	}
 
 	roman1 := make(map[string]int)
@@ -58,25 +61,29 @@ func main() {
 			add = a + b
 			integerToRoman(add)
 			fmt.Println(integerToRoman(add))
-			return
+			time.Sleep(3 * time.Second)
+			os.Exit(0)
 
 		case "-":
 			var sub int
 			sub = a - b
 			if sub <= 0 {
 				fmt.Println("Отрицательное или нулевое значение")
-				return
+				time.Sleep(3 * time.Second)
+				os.Exit(0)
 			}
 			integerToRoman(sub)
 			fmt.Println(integerToRoman(sub))
-			return
+			time.Sleep(3 * time.Second)
+			os.Exit(0)
 
 		case "*":
 			var multiply int
 			multiply = a * b
 			integerToRoman(multiply)
 			fmt.Println(integerToRoman(multiply))
-			return
+			time.Sleep(3 * time.Second)
+			os.Exit(0)
 
 		case "/":
 			var divide int
@@ -84,12 +91,14 @@ func main() {
 				divide = a / b
 				integerToRoman(divide)
 				fmt.Println(integerToRoman(divide))
-				return
+				time.Sleep(3 * time.Second)
+				os.Exit(0)
 			}
 
 		default:
 			fmt.Println("Неверная команда")
-			return
+			time.Sleep(3 * time.Second)
+			os.Exit(0)
 		}
 	}
 
@@ -98,11 +107,13 @@ func main() {
 
 	if k > 10 || k == 0 || k < 0 {
 		fmt.Println("Неверное значение")
-		return
+		time.Sleep(3 * time.Second)
+		os.Exit(0)
 	}
 	if m > 10 || m == 0 || m < 0 {
 		fmt.Println("Неверное значение")
-		return
+		time.Sleep(3 * time.Second)
+		os.Exit(0)
 	}
 
 	switch operator {
@@ -111,25 +122,35 @@ func main() {
 		var add int
 		add = k + m
 		fmt.Println(add)
+		time.Sleep(3 * time.Second)
+		os.Exit(0)
 
 	case "-":
 		var sub int
 		sub = k - m
 		fmt.Println(sub)
+		time.Sleep(3 * time.Second)
+		os.Exit(0)
 
 	case "*":
 		var multiply int
 		multiply = k * m
 		fmt.Println(multiply)
+		time.Sleep(3 * time.Second)
+		os.Exit(0)
 
 	case "/":
 		var divide int
 
 		divide = k / m
 		fmt.Println(divide)
+		time.Sleep(3 * time.Second)
+		os.Exit(0)
 
 	default:
 		fmt.Println("Неверная команда")
+		time.Sleep(3 * time.Second)
+		os.Exit(0)
 	}
 
 }
